@@ -5,7 +5,7 @@
     "documentation": "https://github.com/dlarrick/hass-kumo",
     "dependencies": [],
     "codeowners": [ "@dlarrick" ],
-    "requirements": ["git+git://github.com/smooth-hat-function/pykumo@update-password-escape#egg=pykumo"],
+    "requirements": ["git+https://github.com/smooth-hat-function/pykumo@update-password-escape"],
     "version": "0.2.7",
     "homeassistant": "0.96.0"
 }
