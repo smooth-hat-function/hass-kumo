@@ -511,6 +511,8 @@ class KumoCloudAccount:
                        'Accept-Language': 'en-US,en',
                        'Content-Type': 'application/json'}
             body = {"username": self._username, "password": self._password, "appVersion": "2.2.0"}
+            
+            _LOGGER.warning(f"Request: headers = {headers}, body = {body}, json_body = {json.dumps(body)})
             try:
                 response = requests.post(self._url, headers=headers, json=body,
                                          timeout=(KUMO_CONNECT_TIMEOUT_SECONDS,
@@ -521,7 +523,7 @@ class KumoCloudAccount:
                 self._kumo_dict = response.json()
             else:
                 _LOGGER.warning("Error response from KumoCloud: %s %s}",
-                                str(response.status_code), response.json)
+                                str(response.status_code), response)
             # Only try to fetch once
             self._need_fetch = False
             if not self._kumo_dict:
