@@ -512,7 +512,7 @@ class KumoCloudAccount:
                        'Content-Type': 'application/json'}
             body = {"username": self._username, "password": self._password, "appVersion": "2.2.0"}
             
-            _LOGGER.warning(f"Request: headers = {headers}, body = {body}, json_body = {json.dumps(body)})
+            _LOGGER.warning("Request: headers = %s, body = %s, json_body = %s", headers, body, json.dumps(body))
             try:
                 response = requests.post(self._url, headers=headers, json=body,
                                          timeout=(KUMO_CONNECT_TIMEOUT_SECONDS,
