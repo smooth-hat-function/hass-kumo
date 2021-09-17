@@ -2,10 +2,9 @@
     "domain": "kumo",
     "name": "Kumo",
     "config_flow": true,
-    "documentation": "https://github.com/dlarrick/hass-kumo",
+    "documentation": "https://github.com/smooth-hat-function/hass-kumo",
     "dependencies": [],
     "codeowners": [ "@dlarrick" ],
-    "requirements": ["git+https://github.com/smooth-hat-function/pykumo@update-password-escape"],
-    "version": "0.2.7",
+    "requirements": ['git+https://github.com/smooth-hat-function/pykumo@update-password-escape'],
     "homeassistant": "0.96.0"
 }
