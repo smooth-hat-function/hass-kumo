@@ -4,6 +4,7 @@
 """
 
 import getpass
+import json
 
 import requests
 
@@ -20,12 +21,9 @@ def main():
         "Accept-Language": "en-US,en",
         "Content-Type": "application/json",
     }
-    body = '{"username":"%s","password":"%s","appVersion":"2.2.0"}' % (
-        username,
-        password,
-    )
+    body = {"username": username, "password": password, "appVersion": "2.2.0"}
     print("body: %s" % str(body))
-    response = requests.post(url, headers=headers, data=body)
+    response = requests.post(url, headers=headers, data=json.dumps(body))
     kumo_dict = response.json()
     print("response: %s" % str(kumo_dict))
 
